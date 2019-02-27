@@ -7,7 +7,7 @@ if len(sys.argv) != 2:
 	print('Usage : ./create_dir "<questionname>"')
 	exit()
 
-name_str = sys.argv[1]
+name_str = sys.argv[1].replace('.', '')
 num = name_str.split(' ')[0]
 dirname = '_'.join(str(name_str).lower().split(' '))
 path = '{}/{}'.format(os.getcwd(), dirname)
