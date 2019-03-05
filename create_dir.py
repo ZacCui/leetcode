@@ -19,6 +19,9 @@ except OSError:
 else:  
     print ("Successfully created the directory %s " % path)
 
-with open('{}/{}.py'.format(path, num), 'w+') as f:
-	f.write('#!/usr/local/bin/python3')
-	print ("Successfully created the file %s " % '{}/{}.py'.format(path, num))
+languages = ['py', 'java', 'cpp']
+
+for lan in languages:	
+	with open('{}/{}.{}'.format(path, num, lan), 'w+') as f:
+		if lan == 'py': f.write('#!/usr/local/bin/python3')
+		print ("Successfully created the file %s " % '{}/{}.py'.format(path, num))
