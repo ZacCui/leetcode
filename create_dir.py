@@ -9,6 +9,7 @@ if len(sys.argv) != 2:
 	exit()
 
 author = os.environ['FULL_NAME'] if os.environ.get('FULL_NAME') else 'Unknown'
+file_author = '_'.join(author.lower().split(' '))
 time = str(datetime.datetime.now()).split('.')[0]
 name_str = sys.argv[1].replace('.', '')
 num = name_str.split(' ')[0]
@@ -26,10 +27,10 @@ else:
 languages = ['py', 'java', 'cpp']
 
 for lan in languages:	
-	with open('{}/{}.{}'.format(path, num, lan), 'w+') as f:
+	with open('{}/{}_{}.{}'.format(path, file_author, num, lan), 'w+') as f:
 		if lan == 'py': 
 			f.write('#!/usr/local/bin/python3\n')
 			f.write("\'\'\'\n\tAuthor: {}\n\tCreated Date: {}\n\'\'\'".format(author, time))
 		else:
 			f.write("/*\n\tAuthor: {}\n\tCreated Date: {}\n*/".format(author, time))
-		print ("Successfully created the file %s " % '{}/{}.{}'.format(path, num, lan))
+		print ("Successfully created the file %s " % '{}/{}_{}.{}'.format(path, file_author, num, lan))

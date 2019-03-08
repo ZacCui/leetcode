@@ -1,0 +1,8 @@
+#c/c++
+*.o
+
+#java
+*.class
+
+#py
+__pycache__/
