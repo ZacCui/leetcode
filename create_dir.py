@@ -7,7 +7,7 @@ import datetime
 #config
 author = os.environ['FULL_NAME'] if os.environ.get('FULL_NAME') else 'Unknown'
 time = str(datetime.datetime.now()).split('.')[0]
-languages = ['py', 'java', 'cpp']
+languages = ['py']
 
 def search_question(num):
 	for file_name in os.listdir():
