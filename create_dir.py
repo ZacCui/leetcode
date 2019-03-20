@@ -3,6 +3,8 @@
 import sys
 import os
 import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 #config
 author = os.environ['FULL_NAME'] if os.environ.get('FULL_NAME') else 'Unknown'
