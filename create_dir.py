@@ -47,9 +47,12 @@ def create_file(path):
 			print ("File %s exists" % file_name)
 
 
-if len(sys.argv) != 2:
-	print('Usage : python3 create_dir "<question_name>" | <question_number>')
+if len(sys.argv) < 2:
+	print('Usage : python3 create_dir [<question_name> | <question_number>] [ <languages> ]')
 	exit()
+
+if sys.argv[2]:
+	languages = [sys.argv[2]]
 
 if sys.argv[1].isdigit():
 	path = '{}/{}'.format(os.getcwd(), search_question(str(sys.argv[1])))
