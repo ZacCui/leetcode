@@ -51,7 +51,7 @@ if len(sys.argv) < 2:
 	print('Usage : python3 create_dir [<question_name> | <question_number>] [ <languages> ]')
 	exit()
 
-if sys.argv[2]:
+if len(sys.argv) > 2:
 	languages = [sys.argv[2]]
 
 if sys.argv[1].isdigit():
